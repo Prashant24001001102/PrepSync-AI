@@ -7,6 +7,7 @@ const messageInput = document.getElementById("message");
 
 const formMessage = document.getElementById("formMessage");
 
+if (form) {
 form.addEventListener("submit", function (e) {
 
     e.preventDefault();
@@ -59,7 +60,82 @@ form.addEventListener("submit", function (e) {
     "Message sent successfully!";
 
     formMessage.style.color = "#00ff99";
+      const submissions =
+    JSON.parse(localStorage.getItem("contacts")) || [];
 
+submissions.push({
+    name,
+    email,
+    subject,
+    message,
+    time: new Date().toLocaleString()
+});
+
+localStorage.setItem(
+    "contacts",
+    JSON.stringify(submissions)
+);
+console.log(localStorage.getItem("contacts"));
+console.log("Saving to localStorage...");
+console.log(name, email, subject, message);
     form.reset();
 
 });
+}
+// DISPLAY SUBMISSIONS PAGE
+
+const submissionsContainer = document.getElementById("submissionsContainer");
+
+if (submissionsContainer) {
+
+    const submissions =
+        JSON.parse(localStorage.getItem("contacts")) || [];
+
+    document.getElementById("totalMessages").textContent =
+        submissions.length;
+
+    if (submissions.length === 0) {
+
+        submissionsContainer.innerHTML = `
+            <div class="submission-card">
+                <h3>No Submissions Yet</h3>
+                <p>Contact form messages will appear here.</p>
+            </div>
+        `;
+
+    } else {
+
+       submissions.forEach((submission, index) => {
+
+           submissionsContainer.innerHTML += `
+    <div class="submission-card">
+        <h3>${submission.name}</h3>
+        <p><strong>Email:</strong> ${submission.email}</p>
+        <p><strong>Subject:</strong> ${submission.subject}</p>
+        <p><strong>Message:</strong> ${submission.message}</p>
+        <p><strong>Submitted:</strong> ${submission.time}</p>
+
+        <button class="delete-btn"
+        onclick="deleteSubmission(${index})">
+        🗑 Delete
+        </button>
+    </div>
+`;
+        });
+
+    }
+}
+function deleteSubmission(index) {
+
+    let submissions =
+    JSON.parse(localStorage.getItem("contacts")) || [];
+
+    submissions.splice(index, 1);
+
+    localStorage.setItem(
+        "contacts",
+        JSON.stringify(submissions)
+    );
+
+    location.reload();
+}

@@ -1305,3 +1305,64 @@ footer{
     }
 
 }
+/* SUBMISSIONS PAGE */
+
+.submissions-section{
+    padding:120px 10%;
+    min-height:100vh;
+}
+
+.submission-stats{
+    margin:40px 0;
+}
+
+.stat-box{
+    width:220px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+}
+
+.stat-box h3{
+    font-size:2rem;
+    color:#20c5ff;
+}
+
+#submissionsContainer{
+    display:grid;
+    gap:25px;
+}
+
+.submission-card{
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.submission-card h3{
+    margin-bottom:10px;
+}
+
+.submission-card p{
+    margin:8px 0;
+}
+.delete-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#ff4d4d;
+    color:white;
+    font-weight:600;
+    float:right;
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+    transform:translateY(-2px);
+    opacity:0.9;
+}
