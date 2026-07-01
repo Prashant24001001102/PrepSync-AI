@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dashboard | PrepSync AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        PrepSync AI
+    </div>
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <a href="contact.html" class="primary-btn">
+        Get Started
+    </a>
+
+</header>
+
+
+<!-- CONTACT HERO -->
+
+<section class="contact-hero">
+
+   <div class="contact-badge">
+    🚀 AI Placement Dashboard
+</div>
+<h1>
+    Your Placement Command Center
+</h1>
+
+  <p>
+    Manage your preparation, track tasks, monitor your progress,
+    and stay interview-ready with your personal AI dashboard.
+</p>
+
+</section>
+<section class="dashboard-stats">
+
+    <div class="stat-card">
+        <h2>120</h2>
+        <p>📚 DSA Problems</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>5</h2>
+        <p>✅ Today's Tasks</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>15</h2>
+        <p>🔥 Day Streak</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>2</h2>
+        <p>🎯 Interviews</p>
+    </div>
+
+</section>
+<!-- ================= TASK MANAGER ================= -->
+
+<section class="task-manager">
+
+    <h2>📋 Today's Tasks</h2>
+
+    <div class="task-controls">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a new task..."
+        >
+
+        <select id="priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <select id="category">
+            <option>DSA</option>
+            <option>Development</option>
+            <option>Aptitude</option>
+            <option>Interview</option>
+            <option>Projects</option>
+        </select>
+
+        <button id="addTaskBtn">
+            + Add Task
+        </button>
+
+    </div>
+
+    <div class="task-search">
+
+        <input
+            type="text"
+            id="searchTask"
+            placeholder="🔍 Search Tasks..."
+        >
+
+    </div>
+
+    <div id="taskList">
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
